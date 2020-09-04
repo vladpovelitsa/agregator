@@ -47,12 +47,10 @@ gulp.task('sass', function(done) {
 gulp.task('scripts', function(done){
 
     gulp.src([
-        'app/libs/jquery/dist/jquery.min.js', 
-        'app/libs/slick-carousel/slick/slick.min.js', 
+        'app/libs/jquery/dist/jquery.min.js',
         'app/libs/paw-select/paw-select.js',
-        'app/libs/paw-range/paw-range.js',
-        'app/libs/lightbox/dist/js/lightbox.min.js',
-        'app/libs/jquery.maskedinput.js',
+        'app/libs/swiper/swiper-bundle.min.js',
+        'app/libs/calendar/calendar.js',
         ])
     .pipe(concat('libs.min.js'))
     .pipe(uglify())
@@ -63,10 +61,10 @@ gulp.task('scripts', function(done){
 gulp.task('styles', function(done){
 
     gulp.src([
-        'app/libs/slick-carousel/slick/slick.scss',
         'app/libs/paw-select/paw-select.scss',
-        'app/libs/paw-range/paw-range.scss',
-        'app/libs/lightbox/dist/css/lightbox.min.css',
+        'app/libs/swiper/swiper-bundle.min.css',
+        'app/libs//calendar/calendar.css'
+
         ])
     .pipe(concat('libs.min.css'))
     .pipe(sass({
