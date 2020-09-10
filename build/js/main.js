@@ -197,6 +197,8 @@ function addIndicators(settings, wrap){
   }
 }
 
+var selectedTypes = []
+
 function typesSelect() {
   var e = event.target;
   if (e.classList.contains('type_btn')) {
@@ -204,13 +206,29 @@ function typesSelect() {
     selectedNode.innerText = e.innerText
     if (e.parentNode.classList.contains('all_types')) {
       document.querySelector('.selected_types').appendChild(selectedNode)
+      selectedTypes.push(e.getAttribute('data-id'))
     }
     else if (e.parentNode.classList.contains('selected_types')) {
       document.querySelector('.all_types').appendChild(selectedNode)
+      removeType(selectedTypes, e)
     }
+    // console.log(selectedTypes)
     e.remove()
+    document.querySelector('.types_input').value = selectedTypes
+    console.log(document.querySelector('.types_input').value)
+    return selectedTypes
   }
 }
+
+function removeType(arr,target){
+  arr.forEach(function(type){
+    if (type == target.getAttribute('data-id')) {
+      arr.splice(arr.indexOf(type),arr.indexOf(type)+1)
+    }
+    return arr
+  })
+}
+
 
 document.addEventListener('click', typesSelect)
 
@@ -331,7 +349,7 @@ for (i = 0; i < l; i++) {
   /* For each element, create a new DIV that will contain the option list: */
   b = document.createElement("DIV");
   b.setAttribute("class", "select-items select-hide");
-  for (j = 1; j < ll; j++) {
+  for (j = 0; j < ll; j++) {
     /* For each option in the original select element,
     create a new DIV that will act as an option item: */
     c = document.createElement("DIV");

@@ -481,12 +481,16 @@
 				opacity:.7;
 			}
 		}
-		.ui-state-highlight {
+		.ui-state-highlight,
+		.ui-state-active {
 			color: #fff;
 			background: var(--secondaryColor);
 			display: flex;
 			justify-content: center;
 			align-items: center;
+		}
+		.ui-state-active {
+			color: var(--mainColor);
 		}
 	}
 }

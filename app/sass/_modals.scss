@@ -43,6 +43,20 @@
 				}
 			}
 		}
+		#types & {
+			.close {
+				top: 15px;
+				right: 15px;
+			}
+			.types {
+				border: 1px solid var(--secondaryColor)
+			}
+			.btn {
+				margin: 20px 0 0 auto;
+				display: block;
+			}
+
+		}
 
 
 	}
