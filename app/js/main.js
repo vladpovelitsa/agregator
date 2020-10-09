@@ -471,11 +471,14 @@ var newsSlider = new Swiper('.portfolio_slider', {
 
 function briefToggler() {
   var e = event.target;
-  if (e.checked) {
-    document.querySelector('.brief').classList.remove('hidden');
-  }
-  else {
-    document.querySelector('.brief').classList.add('hidden');    
+  if(e.classList.contains('brief_toggler')) {
+
+    if (e.checked) {
+      document.querySelector('.brief').classList.remove('hidden');
+    }
+    else {
+      document.querySelector('.brief').classList.add('hidden');    
+    }
   }
 }
 
