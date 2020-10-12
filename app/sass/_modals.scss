@@ -441,3 +441,11 @@
 		}
 	}
 // unregister_alert
+
+#portfolio.modal {
+	padding-top: 20px;
+	.modal_content {
+		background: transparent;
+		max-width: 100%;
+	}
+}

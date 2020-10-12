@@ -410,7 +410,7 @@
 		}
 		.swiper-slide {
 			opacity: 0;
-			transition: .5s;
+			// transition: .5s;
 			&.swiper-slide-active {
 				opacity: 1;
 			}
